@@ -16,3 +16,4 @@
         <include path="/config/**" />
     </static-files>
 </appengine-web-app>
+
