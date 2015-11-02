@@ -134,7 +134,7 @@ public class Photo extends DataObject {
 	/**
 	 * should be public 
 	 */
-	public Coordinate location;
+	public Location location;
 	
 	/**
 	 *
@@ -427,15 +427,23 @@ public class Photo extends DataObject {
 	/**
 	 * @methodtype get
 	 */
-	public Coordinate getLocation() {
+	public Location getLocation() {
 		return location;
 	}
 	
 	/**
 	 * @methodtype set
 	 */
-	public void setLocation(double latitude, double longitude) {
-		location = new Coordinate(latitude, longitude);
+	public void setLocation(String name, double latitude, double longitude) {
+		location = new Location(name, new Coordinate(latitude, longitude));
 	}
+	
+	/**
+	 * @methodtype set
+	 */
+	public void setLocation(String name, Coordinate coordinate) {
+		location = new Location(name, coordinate);
+	}
+	
 	
 }
