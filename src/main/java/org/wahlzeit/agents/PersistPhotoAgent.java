@@ -1,7 +1,7 @@
 package org.wahlzeit.agents;
 
 //import org.wahlzeit.model.DogPhoto;
-import org.wahlzeit.model.DogPhotoManager;
+//import org.wahlzeit.model.DogPhotoManager;
 import org.wahlzeit.model.Photo;
 import org.wahlzeit.model.PhotoManager;
 import org.wahlzeit.services.LogBuilder;
@@ -36,7 +36,8 @@ public class PersistPhotoAgent extends HttpServlet {
 			//DogPhoto photo = DogPhotoManager.getInstance().getPhoto(id);
 			Photo photo = PhotoManager.getInstance().getPhoto(id);
 			if (photo != null) {
-				DogPhotoManager.getInstance().savePhoto(photo);
+				//DogPhotoManager.getInstance().savePhoto(photo);
+				PhotoManager.getInstance().savePhoto(photo);
 				log.config(LogBuilder.createSystemMessage().addMessage("Photo saved.").toString());
 			} else {
 				response.setStatus(299);
